@@ -31,17 +31,18 @@ const REAL_USERS = {
     // },
 };
 
-// Team Channels - Channels where the bot will post daily check-ins
+// Team Channels - Only use channels where the bot has been explicitly invited
+// By default, the bot will send DMs to respect Slack etiquette
 const TEAM_CHANNELS = {
-    main_accountability: {
-        channel: "#general", // Replace with your actual channel
-        active: true,
-        checkInTime: "16:30", // 4:30 PM
-        days: ["monday", "tuesday", "wednesday", "thursday", "friday"],
-        messageType: "group_check_in" // or "individual_mention"
-    }
+    // main_accountability: {
+    //     channel: "#general", // Only use if bot is invited to this channel
+    //     active: false, // Disabled by default - use DMs instead
+    //     checkInTime: "16:30", // 4:30 PM
+    //     days: ["monday", "tuesday", "wednesday", "thursday", "friday"],
+    //     messageType: "group_check_in" // or "individual_mention"
+    // }
 
-    // Add more channels if needed
+    // Add channels ONLY if the bot has been explicitly invited
     // dev_team: {
     //     channel: "#dev-team",
     //     active: true,
@@ -141,7 +142,7 @@ const EXAMPLE_REAL_TEAM = {
         role: "Engineering Manager",
         active: true,
         timezone: "America/New_York",
-        preferredChannel: "#general",
+        preferredChannel: "DMs", // Changed to DMs - bot sends direct messages by default
         checkInDays: ["monday", "tuesday", "wednesday", "thursday", "friday"],
         customGoals: ["Team productivity", "Code quality", "Sprint delivery"]
     },
@@ -151,7 +152,7 @@ const EXAMPLE_REAL_TEAM = {
         role: "Senior Developer",
         active: true,
         timezone: "America/Los_Angeles",
-        preferredChannel: "#general",
+        preferredChannel: "DMs", // Changed to DMs - bot sends direct messages by default
         checkInDays: ["monday", "tuesday", "wednesday", "thursday", "friday"],
         customGoals: ["Feature development", "Technical debt", "Mentoring"]
     },
@@ -161,7 +162,7 @@ const EXAMPLE_REAL_TEAM = {
         role: "UX Designer",
         active: true,
         timezone: "America/Chicago",
-        preferredChannel: "#general",
+        preferredChannel: "DMs", // Changed to DMs - bot sends direct messages by default
         checkInDays: ["monday", "tuesday", "wednesday", "thursday", "friday"],
         customGoals: ["User research", "Design system", "Prototyping"]
     }
