@@ -2,11 +2,14 @@
 // Configure your actual team members here to receive daily check-ins
 
 const REAL_USERS = {
+    // Add your team members here with their actual Slack User IDs
+    // To find User IDs, run: node find-user-ids.js
+    
     // Example user - replace with your actual team members
     john_doe: {
-        name: "John Doe",
-        slackId: "@john.doe", // Slack username or User ID (U1234567)
-        role: "Software Engineer",
+        name: "Marnie",
+        slackId: "U078UMV769F", // REPLACE with actual Slack User ID (find with: node find-user-ids.js)
+        role: "Executive Assistant",
         active: true, // Set to false to temporarily disable check-ins
         timezone: "America/New_York", // User's timezone for proper scheduling
         preferredChannel: "DMs", // "DMs" for direct messages or "#channel-name" for channel
@@ -19,9 +22,9 @@ const REAL_USERS = {
     }
 
     // Add your team members here - copy the format above
-    // team_member_username: {
+    // team_member_1: {
     //     name: "Team Member Name",
-    //     slackId: "@username or U1234567",
+    //     slackId: "U2345678901", // ACTUAL User ID from find-user-ids.js
     //     role: "Their Role",
     //     active: true,
     //     timezone: "America/Los_Angeles",
@@ -29,6 +32,17 @@ const REAL_USERS = {
     //     checkInDays: ["monday", "tuesday", "wednesday", "thursday", "friday"],
     //     customGoals: ["Goal 1", "Goal 2", "Goal 3"]
     // },
+    
+    // team_member_2: {
+    //     name: "Another Team Member",
+    //     slackId: "U3456789012", // ACTUAL User ID from find-user-ids.js
+    //     role: "Their Role",
+    //     active: true,
+    //     timezone: "America/Chicago",
+    //     preferredChannel: "DMs",
+    //     checkInDays: ["monday", "tuesday", "wednesday", "thursday", "friday"],
+    //     customGoals: ["Goal 1", "Goal 2", "Goal 3"]
+    // }
 };
 
 // Team Channels - Only use channels where the bot has been explicitly invited
@@ -138,31 +152,31 @@ function activateUser(userKey) {
 const EXAMPLE_REAL_TEAM = {
     sarah_manager: {
         name: "Sarah Johnson",
-        slackId: "@sarah.johnson", // Use actual Slack username
+        slackId: "U1234567890", // REPLACE with actual User ID from find-user-ids.js
         role: "Engineering Manager",
         active: true,
         timezone: "America/New_York",
-        preferredChannel: "DMs", // Changed to DMs - bot sends direct messages by default
+        preferredChannel: "DMs", // DMs are default - bot sends direct messages
         checkInDays: ["monday", "tuesday", "wednesday", "thursday", "friday"],
         customGoals: ["Team productivity", "Code quality", "Sprint delivery"]
     },
     mike_dev: {
         name: "Mike Chen",
-        slackId: "@mike.chen",
+        slackId: "U2345678901", // REPLACE with actual User ID from find-user-ids.js
         role: "Senior Developer",
         active: true,
         timezone: "America/Los_Angeles",
-        preferredChannel: "DMs", // Changed to DMs - bot sends direct messages by default
+        preferredChannel: "DMs", // DMs are default - bot sends direct messages
         checkInDays: ["monday", "tuesday", "wednesday", "thursday", "friday"],
         customGoals: ["Feature development", "Technical debt", "Mentoring"]
     },
     jessica_designer: {
         name: "Jessica Wu",
-        slackId: "@jessica.wu",
+        slackId: "U3456789012", // REPLACE with actual User ID from find-user-ids.js
         role: "UX Designer",
         active: true,
         timezone: "America/Chicago",
-        preferredChannel: "DMs", // Changed to DMs - bot sends direct messages by default
+        preferredChannel: "DMs", // DMs are default - bot sends direct messages
         checkInDays: ["monday", "tuesday", "wednesday", "thursday", "friday"],
         customGoals: ["User research", "Design system", "Prototyping"]
     }
